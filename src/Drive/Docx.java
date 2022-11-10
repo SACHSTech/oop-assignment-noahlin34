@@ -3,6 +3,11 @@ import java.util.StringTokenizer;
 
 import Drive.*;
 
+
+/**
+ * This class represents a .docx file. It inherits attributes from the document class, while also containing its own unique attributes
+ */
+
 public class Docx extends Document  {
 
     private int intParagraphCount;
@@ -10,8 +15,8 @@ public class Docx extends Document  {
     
     public Docx(int wordCount, double fileSize, String owner, String fileExtension, int paragraphCount, String indentationType) {
         super(wordCount, fileSize, owner, fileExtension);
-        paragraphCount = intParagraphCount;
-        indentationType = strIndentationType;
+        intParagraphCount = paragraphCount;
+        strIndentationType = indentationType;
     }
 
     public int getParagraphCount() {

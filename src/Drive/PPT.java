@@ -16,12 +16,16 @@ public class PPT extends Document {
     }
 
 
-   
     public int getSlideCount() {
         return intSlideCount;
     }
-
     
-   
+    /**
+     * Getter method to return the type of theme the slide show has
+     * @return Theme of the slideshow file
+     */
+    public String getTheme() {
+        return strTheme;
+    }
 
 }
