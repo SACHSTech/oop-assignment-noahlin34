@@ -16,5 +16,12 @@ public class PPT extends Document {
     }
 
 
+   
+    public int getSlideCount() {
+        return intSlideCount;
+    }
+
+    
+   
 
 }
