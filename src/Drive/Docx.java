@@ -13,8 +13,8 @@ public class Docx extends Document  {
     private int intParagraphCount;
     private String strIndentationType;
     
-    public Docx(int wordCount, double fileSize, String owner, String fileExtension, int paragraphCount, String indentationType) {
-        super(wordCount, fileSize, owner, fileExtension);
+    public Docx(int wordCount, double fileSize, String owner, String fileExtension, int paragraphCount, String indentationType, String strTitle) {
+        super(wordCount, fileSize, owner, fileExtension, strTitle);
         intParagraphCount = paragraphCount;
         strIndentationType = indentationType;
     }

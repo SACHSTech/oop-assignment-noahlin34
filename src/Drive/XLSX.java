@@ -6,9 +6,9 @@ public class XLSX extends Document {
     private int intRowCount;
     private int intColumnCount;
 
-    
-    public XLSX(int wordCount, double fileSize, String owner, String fileExtension, int intRowCount, int intColumnCount) {
-        super(wordCount, fileSize, owner, fileExtension);
+
+    public XLSX(int wordCount, double fileSize, String owner, String fileExtension, int intRowCount, int intColumnCount, String strTitle) {
+        super(wordCount, fileSize, owner, fileExtension, strTitle);
 
         this.intColumnCount = intColumnCount;
         this.intRowCount = intRowCount;

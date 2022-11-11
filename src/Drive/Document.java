@@ -14,6 +14,7 @@ public class Document {
     private double dblFileSize;
     private String strOwner;
     private String strFileExtension;
+    private String strTitle;
 
     /**
      * Constructor for document object
@@ -22,10 +23,11 @@ public class Document {
      * @param owner: the username of the person that owns the file
      * @param fileExtension: the file extension, .docx, .ppt, etc. 
      */
-    public Document(int wordCount, double fileSize, String owner, String fileExtension) {
+    public Document(int wordCount, double fileSize, String owner, String fileExtension, String strTitle) {
         intWordCount = wordCount;
         dblFileSize = fileSize;
         this.strOwner = owner;
+        this.strTitle = strTitle;
         fileExtension = strFileExtension;
     }
 
@@ -38,6 +40,9 @@ public class Document {
         return intWordCount;
     }
 
+    public String getTitle() {
+        return strTitle;
+    }
     /**
      * Getter method for dblFileSize
      * @return size of the file in gb 

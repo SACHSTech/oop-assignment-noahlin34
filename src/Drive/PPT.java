@@ -7,8 +7,8 @@ public class PPT extends Document {
     private int intSlideCount;
     private String strTheme;
 
-    public PPT(int wordCount, double fileSize, String owner, String fileExtension, int slideCount, String strTheme) {
-        super(wordCount, fileSize, owner, fileExtension);
+    public PPT(int wordCount, double fileSize, String owner, String fileExtension, int slideCount, String strTheme, String strTitle) {
+        super(wordCount, fileSize, owner, fileExtension, strTitle);
 
         this.intSlideCount = slideCount;
         this.strTheme = strTheme;

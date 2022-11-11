@@ -16,8 +16,8 @@ public class PDF extends Document {
     private String strPassword;
     private boolean boolPassCheck;
     
-    public PDF(int wordCount, double fileSize, String owner, String fileExtension, boolean boolIsProtected, String strPassword) {
-        super(wordCount, fileSize, owner, fileExtension);
+    public PDF(int wordCount, double fileSize, String owner, String fileExtension, boolean boolIsProtected, String strPassword, String strTitle) {
+        super(wordCount, fileSize, owner, fileExtension, strTitle);
         this.boolIsProtected = boolIsProtected;
         this.strPassword = strPassword;
         this.boolPassCheck = false;
