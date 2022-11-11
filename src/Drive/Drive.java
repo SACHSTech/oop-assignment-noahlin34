@@ -12,10 +12,10 @@ public class Drive {
     private double dblStorageSize;
     private String strAccountName;
     private String strAccountEmail;
-    private ArrayList<Document> arrDocuments = new ArrayList<Document>();
+    private ArrayList<Object> arrDocuments = new ArrayList<Object>();
 
 
-    public Drive(int intFileCount, double dblStorageSize, String strAccountName, String strAccountEmail, ArrayList<Document> arrDocuments) {
+    public Drive(int intFileCount, double dblStorageSize, String strAccountName, String strAccountEmail, ArrayList<Object> arrDocuments) {
 
         this.intFileCount = intFileCount;
         this.dblStorageSize = dblStorageSize;
@@ -24,6 +24,11 @@ public class Drive {
 
         this.arrDocuments.addAll(arrDocuments);
 
+    }
+
+
+    public void addDocument(Object newDocument) {
+        arrDocuments.add(newDocument);
     }
 
 
@@ -43,9 +48,9 @@ public class Drive {
         return strAccountEmail;
     }
 
-    public ArrayList<Document> returnArr() {
+    public ArrayList<Object> getDocuments() {
         return arrDocuments;
     }
 
-    
+
 }
