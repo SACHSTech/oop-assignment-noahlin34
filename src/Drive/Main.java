@@ -37,7 +37,7 @@ public class Main {
         for(int x = intFileCount; x > 0; x--) {
             System.out.print("Please enter the type of item you would like to add ");
 
-            if(keyboard.readLine().equals("docx")) {
+            if(keyboard.readLine().equals("doc")) {
                 System.out.println("DOCX File added. How many words does this file contain?");
                 int intWordCount = Integer.parseInt(keyboard.readLine());
                 System.out.println("how many paragraphs does this item have?");
@@ -48,6 +48,15 @@ public class Main {
                 Docx docx = new Docx(intWordCount, intWordCount * 1.01, strAccountName, ".docx", intParagraphCount, strJustification);
                 itemsToAdd.add(docx);
             }
+
+            if(keyboard.readLine().equals("powerpoint")) {
+                System.out.println("Powerpoint file added. How many words does this file contain?");
+                int intWordCount = Integer.parseInt(keyboard.readLine());
+                System.out.println("How many slides does this powerpoint have?");
+                int intSlideCount = Integer.parseInt(keyboard.readLine());
+                
+            }
+
         }
 
     }
