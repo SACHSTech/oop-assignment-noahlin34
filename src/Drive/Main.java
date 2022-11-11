@@ -114,6 +114,33 @@ public class Main {
 
         System.out.println(userDrive.getAccountName() + "'s drive stats: ");
         System.out.println("File count: " + userDrive.getFileCount());
+        System.out.println("Total storage size: " + userDrive.getStorageSize());
+        System.out.println("Choose an item to view info (0...." + (userDrive.getFileCount() - 1));
+        System.out.println("Current items in drive: ");
+
+        for(int x = 0; x < userDrive.getFileCount(); x++) {
+            System.out.println(userDrive.getDocuments().get(x).getTitle() + " - " + x);
+        }
+
+        String selectionInput = "";            
+        selectionInput = keyboard.readLine();
+
+        while(selectionInput.equals(null) == false) {
+            System.out.print("Selection: ");
+            System.out.println("ITEM " + selectionInput + " STATS: ");
+            int selectionNum = Integer.parseInt(selectionInput);
+            System.out.println("TITLE: " + userDrive.getDocuments().get(selectionNum).getTitle());
+            System.out.println("STORAGE SIZE: " + userDrive.getDocuments().get(selectionNum).getFileSize());
+            System.out.println("FILE EXTENSION: " + userDrive.getDocuments().get(selectionNum).getFileExtension());
+            System.out.println("Choose an item to view info (0...." + (userDrive.getFileCount() - 1));
+            System.out.println("Current items in drive: ");
+            for(int x = 0; x < userDrive.getFileCount(); x++) {
+                System.out.println(userDrive.getDocuments().get(x).getTitle() + " - " + x);
+            }
+            selectionInput = keyboard.readLine();
+
+
+        }
         
        
     }
