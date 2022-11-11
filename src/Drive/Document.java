@@ -1,5 +1,7 @@
 package Drive;
 
+import java.lang.invoke.WrongMethodTypeException;
+
 /**
  * 
  * This will be the main document class that all other classes will extend
@@ -23,7 +25,7 @@ public class Document {
     public Document(int wordCount, double fileSize, String owner, String fileExtension) {
         intWordCount = wordCount;
         dblFileSize = fileSize;
-        strOwner = owner;
+        this.strOwner = owner;
         fileExtension = strFileExtension;
     }
 
@@ -41,16 +43,10 @@ public class Document {
      * @return size of the file in gb 
      */
     public double getFileSize() {
+        dblFileSize = 1.1 * intWordCount;
         return dblFileSize;
     }
 
-    /**
-     * Getter method for strOwner
-     * @return name of the person who owns the file 
-     */
-    public String getOwner() {
-        return strOwner;
-    }
 
     /**
      * Getter method for strFileExtension

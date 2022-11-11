@@ -1,6 +1,8 @@
 package Drive;
 
 import java.io.*;
+import java.util.ArrayList;
+
 import Drive.*;
 
 /**
@@ -30,7 +32,23 @@ public class Main {
         System.out.print("Enter account email: ");
         String strAccountEmail = keyboard.readLine();
 
-        
+        ArrayList<Object> itemsToAdd = new ArrayList<Object>();
+
+        for(int x = intFileCount; x > 0; x--) {
+            System.out.print("Please enter the type of item you would like to add ");
+
+            if(keyboard.readLine().equals("docx")) {
+                System.out.println("DOCX File added. How many words does this file contain?");
+                int intWordCount = Integer.parseInt(keyboard.readLine());
+                System.out.println("how many paragraphs does this item have?");
+                int intParagraphCount = Integer.parseInt(keyboard.readLine());
+                System.out.println("What type of justification does this file use (left, right, center)");
+                String strJustification = keyboard.readLine();
+
+                Docx docx = new Docx(intWordCount, intWordCount * 1.01, strAccountName, ".docx", intParagraphCount, strJustification);
+                itemsToAdd.add(docx);
+            }
+        }
 
     }
 

@@ -12,7 +12,7 @@ public class Drive {
     private double dblStorageSize;
     private String strAccountName;
     private String strAccountEmail;
-    private ArrayList<Object> arrDocuments = new ArrayList<Object>();
+    private ArrayList<Object> arrDocuments;
 
 
     public Drive(int intFileCount, double dblStorageSize, String strAccountName, String strAccountEmail, ArrayList<Object> arrDocuments) {
