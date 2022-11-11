@@ -69,8 +69,28 @@ public class Main {
                         int intColumnCount = Integer.parseInt(keyboard.readLine());
 
                         XLSX xlsx = new XLSX(intWordCount, intWordCount * 1.01, strAccountEmail, ".xlsx", intRowCount, intColumnCount);
+                        itemsToAdd.add(xlsx);
 
+                    } else {
+                        if(input.equals("pdf")) {
+                            System.out.print("PDF file added. How many words does this file contain? ");
+                            int intWordCount = Integer.parseInt(keyboard.readLine());
+                            System.out.println("Is this PDF file protected? (y/n) ");
+                            String boolInput = keyboard.readLine();
+                            boolean boolIsProtected = false;
+                            String strPassword = "";
+                            if(boolInput.equals("y")) {
+                                boolIsProtected = true;
+                                System.out.println("Please enter the password you wish to use to protect this PDF. ");
+                                strPassword = keyboard.readLine();
+                            } else {
+                                System.out.println("PDF will be freely modifiable.");
+                            }
 
+                            PDF pdf = new PDF(intWordCount, intWordCount * 1.01, strAccountEmail, ".pdf", boolIsProtected, strPassword);
+                            itemsToAdd.add(pdf);
+
+                        }
                     }
                 }       
             }
