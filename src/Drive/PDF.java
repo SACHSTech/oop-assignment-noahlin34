@@ -27,7 +27,7 @@ public class PDF extends Document {
         return this.strPassword;
     }
 
-    public boolean boolIsProtected() {
+    public boolean isProtected() {
         return this.boolIsProtected;
     }
 
@@ -44,6 +44,10 @@ public class PDF extends Document {
             }
           }
 
+    }
+
+    public boolean passCheck() {
+        return passCheck();
     }
 
     
