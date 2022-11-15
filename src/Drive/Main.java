@@ -118,6 +118,9 @@ public class Main {
                             PDF pdf = new PDF(intWordCount, intWordCount * 1.01, strAccountEmail, ".pdf", boolIsProtected, strPassword, strTitle);
                             itemsToAdd.add(pdf);
 
+                        } else {
+                            System.out.println("invalid input.")
+                            continue;
                         }
                     }
                 }       
@@ -161,9 +164,10 @@ public class Main {
                         System.out.println("TITLE: " + userDrive.getDocuments().get(selectionNum).getTitle());
                         System.out.println("STORAGE SIZE: " + userDrive.getDocuments().get(selectionNum).getFileSize());
                         System.out.println("FILE EXTENSION: " + userDrive.getDocuments().get(selectionNum).getFileExtension());            
-
-                    } 
-                                 
+                        
+                    } else{
+                        continue;
+                    }     
                 } 
             } 
 
@@ -188,9 +192,7 @@ public class Main {
                 System.out.println("COLUMN COUNT: " + ((XLSX)userDrive.getDocument(selectionNum)).getColumnCount());
                 System.out.println("TOTAL CELL COUNT: " + ((XLSX)userDrive.getDocument(selectionNum)).getTotalCellCount());
 
-            } 
-          
-
+            }
             
 
 
