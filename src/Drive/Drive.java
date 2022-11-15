@@ -53,5 +53,8 @@ public class Drive {
         return arrDocuments;
     }
 
+    public Document getDocument(int i) {
+        return arrDocuments.get(i);
+    }
 
 }

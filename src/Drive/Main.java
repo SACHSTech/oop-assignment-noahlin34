@@ -9,7 +9,9 @@ import Drive.*;
 
 /**
 * 
-* This is the main class file
+* This program simulates the structure of google drive by allowing a user to input information about their personal google drive.
+* It generates an interactive report of their drive, with stats and information about all their simulated "documents."
+* 
 * @author: Noah Lin
 */
 
@@ -21,10 +23,12 @@ public class Main {
 
         BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println("----- GOOGLE DRIVE CLI -----");
+        System.out.println("DRIVE REPORT CLI APP");
+        System.out.println("------------------------------");
+        System.out.println("Welcome to the Drive Report Command Line interface app.");
+        System.out.println("Please enter the requested information. You will be provided a summary of your drive upon completion.");
 
-        System.out.println("Welcome to the Google Drive Command Line interface. Please initalize your drive by providing the following values.");
-
+        System.out.println("------------------------------");
         System.out.print("How many files does your drive contain? ");
         int intFileCount = Integer.parseInt(keyboard.readLine());
 
@@ -105,7 +109,6 @@ public class Main {
                     }
                 }       
             }
-
         }
 
         System.out.println("thank you for inputting the required data. Please wait while the system calculates your drive report.");
@@ -115,34 +118,43 @@ public class Main {
         System.out.println(userDrive.getAccountName() + "'s drive stats: ");
         System.out.println("File count: " + userDrive.getFileCount());
         System.out.println("Total storage size: " + userDrive.getStorageSize());
-        System.out.println("Choose an item to view info (0...." + (userDrive.getFileCount() - 1));
+        System.out.println("Choose an item to view info (0...." + (userDrive.getFileCount()-1) + ")");
         System.out.println("Current items in drive: ");
 
         for(int x = 0; x < userDrive.getFileCount(); x++) {
             System.out.println(userDrive.getDocuments().get(x).getTitle() + " - " + x);
         }
 
-        String selectionInput = "";            
-        selectionInput = keyboard.readLine();
-
-        while(selectionInput.equals(null) == false) {
+        String selectionInput = keyboard.readLine();
+        
+        while(selectionInput.equals("") == false) {
             System.out.print("Selection: ");
-            System.out.println("ITEM " + selectionInput + " STATS: ");
+            System.out.println("ITEM " + selectionInput);
+            System.out.println("STATS: ");
             int selectionNum = Integer.parseInt(selectionInput);
             System.out.println("TITLE: " + userDrive.getDocuments().get(selectionNum).getTitle());
             System.out.println("STORAGE SIZE: " + userDrive.getDocuments().get(selectionNum).getFileSize());
             System.out.println("FILE EXTENSION: " + userDrive.getDocuments().get(selectionNum).getFileExtension());
-            System.out.println("Choose an item to view info (0...." + (userDrive.getFileCount() - 1));
+            if(userDrive.getDocument(selectionNum) instanceof Docx) {
+                System.out.println("PARAGRAPH COUNT: " + ((Docx)userDrive.getDocument(selectionNum)).getParagraphCount());
+                System.out.println("INDENTATION TYPE: " + ((Docx)userDrive.getDocument(selectionNum)).getIndentationType());
+            }  else {
+                continue;
+            }
+
+
+            
+            System.out.println("Choose an item to view info (0...." + (userDrive.getFileCount() - 1) + ")");
+
             System.out.println("Current items in drive: ");
             for(int x = 0; x < userDrive.getFileCount(); x++) {
                 System.out.println(userDrive.getDocuments().get(x).getTitle() + " - " + x);
             }
+
+
             selectionInput = keyboard.readLine();
 
-
-        }
-        
-       
+        }      
     }
 
 }
