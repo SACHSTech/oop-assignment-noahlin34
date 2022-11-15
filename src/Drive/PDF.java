@@ -31,23 +31,19 @@ public class PDF extends Document {
         return this.boolIsProtected;
     }
 
-    public void checkPass(String[] args) throws IOException {
-        
-
-         while(boolPassCheck = false) {
-            System.out.println("Please type password");
-            String input = keyboard.readLine();
-            if(input.equals(strPassword)) {
+    public void checkPass(String pass) {   
+            if(pass.equals(strPassword)) {
                 boolPassCheck = true;
             } else {
-                continue;
+                boolPassCheck = false;
+                System.out.println("Incorrect password, returning...");
             }
-          }
+          
 
     }
 
     public boolean passCheck() {
-        return passCheck();
+        return boolPassCheck;
     }
 
     
