@@ -29,8 +29,21 @@ public class Main {
         System.out.println("Please enter the requested information. You will be provided a summary of your drive upon completion.");
 
         System.out.println("------------------------------");
-        System.out.print("How many files does your drive contain? ");
-        int intFileCount = Integer.parseInt(keyboard.readLine());
+        int intFileCount = 0;
+
+        while(intFileCount <= 0) {
+            System.out.print("How many files does your drive contain? ");
+            try {
+                intFileCount = Integer.parseInt(keyboard.readLine());
+                if(intFileCount == 0) {
+                    System.out.println("Please enter an integer  greater than 0");
+                }
+    
+            } catch (NumberFormatException exception) {
+                System.out.println("Please enter an integer  greater than 0");
+            }
+        }
+        
 
         System.out.print("Enter account name: ");
         String strAccountName = keyboard.readLine();
@@ -135,12 +148,15 @@ public class Main {
             System.out.println("TITLE: " + userDrive.getDocuments().get(selectionNum).getTitle());
             System.out.println("STORAGE SIZE: " + userDrive.getDocuments().get(selectionNum).getFileSize());
             System.out.println("FILE EXTENSION: " + userDrive.getDocuments().get(selectionNum).getFileExtension());
+
             if(userDrive.getDocument(selectionNum) instanceof Docx) {
                 System.out.println("PARAGRAPH COUNT: " + ((Docx)userDrive.getDocument(selectionNum)).getParagraphCount());
                 System.out.println("INDENTATION TYPE: " + ((Docx)userDrive.getDocument(selectionNum)).getIndentationType());
             }  else {
                 continue;
             }
+
+
 
 
             
