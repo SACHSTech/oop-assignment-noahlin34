@@ -141,10 +141,33 @@ public class Main {
         String selectionInput = keyboard.readLine();
         
         while(selectionInput.equals("") == false) {
+
+            
             System.out.print("Selection: ");
+            
             System.out.println("ITEM " + selectionInput);
             System.out.println("STATS: ");
+            System.out.println("================");
+
             int selectionNum = Integer.parseInt(selectionInput);
+
+            if(userDrive.getDocument(selectionNum) instanceof PDF) {
+                if(((PDF)userDrive.getDocument(selectionNum)).isProtected()) {
+                    System.out.println("THIS PDF FILE IS PROTECTED. PLEADE ENTER THE PASSWORD");
+                    String pass = keyboard.readLine();
+                    ((PDF)userDrive.getDocument(selectionNum)).checkPass(pass); 
+                    if(((PDF)userDrive.getDocument(selectionNum)).passCheck() == true) {
+                        System.out.println("CORRECT, the password is: " + ((PDF)userDrive.getDocument(selectionNum)).getPassword());
+                        System.out.println("TITLE: " + userDrive.getDocuments().get(selectionNum).getTitle());
+                        System.out.println("STORAGE SIZE: " + userDrive.getDocuments().get(selectionNum).getFileSize());
+                        System.out.println("FILE EXTENSION: " + userDrive.getDocuments().get(selectionNum).getFileExtension());            
+
+                    } 
+                                 
+                } 
+            } 
+
+
             System.out.println("TITLE: " + userDrive.getDocuments().get(selectionNum).getTitle());
             System.out.println("STORAGE SIZE: " + userDrive.getDocuments().get(selectionNum).getFileSize());
             System.out.println("FILE EXTENSION: " + userDrive.getDocuments().get(selectionNum).getFileExtension());
@@ -152,20 +175,29 @@ public class Main {
             if(userDrive.getDocument(selectionNum) instanceof Docx) {
                 System.out.println("PARAGRAPH COUNT: " + ((Docx)userDrive.getDocument(selectionNum)).getParagraphCount());
                 System.out.println("INDENTATION TYPE: " + ((Docx)userDrive.getDocument(selectionNum)).getIndentationType());
-            }  else {
-                continue;
-            }
+            }  
 
             if(userDrive.getDocument(selectionNum) instanceof PPT) {
                 System.out.println("SLIDE COUNT: " + ((PPT)userDrive.getDocument(selectionNum)).getSlideCount());
                 System.out.println("SLIDESHOW THEME: " + ((PPT)userDrive.getDocument(selectionNum)).getTheme());
                 
             }
+
+            if(userDrive.getDocument(selectionNum) instanceof XLSX) {
+                System.out.println("ROW COUNT: " + ((XLSX)userDrive.getDocument(selectionNum)).getRowCount());
+                System.out.println("COLUMN COUNT: " + ((XLSX)userDrive.getDocument(selectionNum)).getColumnCount());
+                System.out.println("TOTAL CELL COUNT: " + ((XLSX)userDrive.getDocument(selectionNum)).getTotalCellCount());
+
+            } 
+          
+
             
 
 
 
 
+
+            System.out.println("================");
 
             System.out.println("Choose an item to view info (0...." + (userDrive.getFileCount() - 1) + ")");
 
