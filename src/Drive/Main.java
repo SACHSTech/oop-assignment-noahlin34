@@ -119,7 +119,7 @@ public class Main {
                             itemsToAdd.add(pdf);
 
                         } else {
-                            System.out.println("invalid input.")
+                            System.out.println("invalid input.");
                             continue;
                         }
                     }
