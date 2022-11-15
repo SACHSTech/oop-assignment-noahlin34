@@ -156,10 +156,17 @@ public class Main {
                 continue;
             }
 
-
-
-
+            if(userDrive.getDocument(selectionNum) instanceof PPT) {
+                System.out.println("SLIDE COUNT: " + ((PPT)userDrive.getDocument(selectionNum)).getSlideCount());
+                System.out.println("SLIDESHOW THEME: " + ((PPT)userDrive.getDocument(selectionNum)).getTheme());
+                
+            }
             
+
+
+
+
+
             System.out.println("Choose an item to view info (0...." + (userDrive.getFileCount() - 1) + ")");
 
             System.out.println("Current items in drive: ");
