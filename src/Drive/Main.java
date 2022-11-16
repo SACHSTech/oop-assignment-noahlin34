@@ -242,7 +242,7 @@ public class Main {
         String selectionInput = " ";
         
        OUTER: while(selectionInput.equals("") == false) {
-        System.out.println("Choose an item to view info (0...." + (userDrive.getFileCount()-1) + ")");
+        System.out.println("Choose an item to view info (0...." + (userDrive.getFileCount()-1) + ")" + " RETURN to quit");
         System.out.println("Current items in drive: ");
         for(int x = 0; x < userDrive.getFileCount(); x++) {
             System.out.println(userDrive.getDocuments().get(x).getTitle() + " - " + x);
@@ -308,14 +308,9 @@ public class Main {
 
             }
             
-
-
-
-
-
             System.out.println("================");
 
-            System.out.println("Choose an item to view info (0...." + (userDrive.getFileCount() - 1) + ")");
+            System.out.println("Choose an item to view info (0...." + (userDrive.getFileCount() - 1) + ")" + " RETURN TO QUIT");
 
             System.out.println("Current items in drive: ");
             for(int x = 0; x < userDrive.getFileCount(); x++) {
