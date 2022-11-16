@@ -1,6 +1,12 @@
 package Drive;
 import Drive.*;
 
+
+/**
+ * This is the class representing a powerpoint file. It inherits from the document class and has its own unique attributes.
+ * @author Noah Lin 
+ * 
+ */
 public class PPT extends Document {
     
     //initializing variables

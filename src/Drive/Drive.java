@@ -1,11 +1,14 @@
 package Drive;
 import java.util.ArrayList;
-
 import javax.print.Doc;
-
 import Drive.*;
 
 
+/**
+ * This is the parent drive class. This class represents the top level drive. It contains the array of documents, and has 
+ * its own parameters that represent global statistics. 
+ * @author Noah Lin 
+ */
 public class Drive {
     
     //variable declaration

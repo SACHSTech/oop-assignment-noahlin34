@@ -3,8 +3,8 @@ package Drive;
 import java.lang.invoke.WrongMethodTypeException;
 
 /**
- * 
- * This will be the main document class that all other classes will extend
+ * This will be the main document class that all other classes will extend. It has general paremeters needed by all file types
+ * @author Noah Lin 
  * 
  */
 

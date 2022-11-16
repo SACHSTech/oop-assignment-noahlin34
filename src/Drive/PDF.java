@@ -3,11 +3,11 @@ import java.io.BufferedReader;
 import java.io.IOError;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
 import Drive.*;
 
 /**
  * PDF class that inherits from document. 
+ * @author Noah Lin 
  */
 public class PDF extends Document {
 

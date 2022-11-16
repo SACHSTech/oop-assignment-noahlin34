@@ -1,13 +1,12 @@
 package Drive;
 import java.util.StringTokenizer;
-
 import Drive.*;
 
 
 /**
  * This class represents a .docx file. It inherits attributes from the document class, while also containing its own unique attributes
+ * @author Noah Lin
  */
-
 public class Docx extends Document  {
 
     //initizlizing variables

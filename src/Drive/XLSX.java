@@ -1,6 +1,11 @@
 package Drive;
 import Drive.*;
 
+
+/**
+ * This class represents a spreadsheet object. It inherits from document and has unique attributes
+ * @author Noah Lin 
+ */
 public class XLSX extends Document {
 
     private int intRowCount;
