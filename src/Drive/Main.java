@@ -366,7 +366,7 @@ public class Main {
             System.out.print("Selection: ");
             System.out.println("ITEM " + selectionInput);
             System.out.println("================");
-            System.out.println("STATS: ");
+            System.out.println("STATS");
 
             //if statement for if the requestd object is a PDF file 
             if(userDrive.getDocument(selectionNum) instanceof PDF) {
