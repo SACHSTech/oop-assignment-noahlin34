@@ -1,5 +1,7 @@
 package Drive;
 
+import static org.junit.jupiter.api.Assertions.fail;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -94,9 +96,30 @@ public class Main {
             } else {
                 if(input.equals("powerpoint")) {
                     System.out.print("Powerpoint file added. How many words does this file contain? ");
-                    int intWordCount = Integer.parseInt(keyboard.readLine());
+                    int intWordCount = 0;
+                    boolean w = false;
+                    while(w == false) {
+                        try{intWordCount = Integer.parseInt(keyboard.readLine());
+                            w = true;
+                        } catch (NumberFormatException e) {
+                            w = false;
+                            System.out.print("Please enter a valid integer. ");
+                        }
+                    
+                    }
+                        
                     System.out.print("How many slides does this powerpoint have? ");
-                    int intSlideCount = Integer.parseInt(keyboard.readLine());
+                    int intSlideCount = 0;
+                    boolean sc = false;
+                    while(sc == false) {
+                        try {intSlideCount = Integer.parseInt(keyboard.readLine());
+                            sc = true;
+                        }catch (NumberFormatException e) {
+                            sc = false;
+                            System.out.println("Please enter a valid integer. ");
+                        }
+                    }
+
                     System.out.print("What theme does this powerpoint file use? ");
                     String strTheme = keyboard.readLine();
                     System.out.println("what is the title of this item? ");
