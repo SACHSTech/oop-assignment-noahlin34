@@ -10,18 +10,21 @@ import java.lang.invoke.WrongMethodTypeException;
 
 public class Document {
     
+    //initializing variables
     private int intWordCount;
     private double dblFileSize;
     private String strOwner;
     private String strFileExtension;
     private String strTitle;
 
+ 
     /**
-     * Constructor for document object
-     * @param wordCount: number of words in the file 
-     * @param fileSize: size of the file in gb
-     * @param owner: the username of the person that owns the file
-     * @param fileExtension: the file extension, .docx, .ppt, etc. 
+     * constructor method for document parent object
+     * @param wordCount number of words in the file 
+     * @param fileSize size of the file
+     * @param owner
+     * @param fileExtension
+     * @param strTitle
      */
     public Document(int wordCount, double fileSize, String owner, String fileExtension, String strTitle) {
         this.intWordCount = wordCount;
@@ -40,6 +43,18 @@ public class Document {
         return intWordCount;
     }
 
+    /**
+     * Getter method for the owner 
+     * @return owner of the file 
+     */
+    public String getOwner() {
+        return strOwner;
+    }
+
+    /**
+     * getter method for the title
+     * @return the title
+     */
     public String getTitle() {
         return strTitle;
     }

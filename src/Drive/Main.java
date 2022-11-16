@@ -259,6 +259,7 @@ public class Main {
                             //variable intizlization
                             boolean boolIsProtected = false;
                             String strPassword = "";
+                            
 
                             //while loop that iterates until a valid y or n input is given
                             boolean pdfRepeat = true;
@@ -389,7 +390,8 @@ public class Main {
                         System.out.println("CORRECT, the password is: " + ((PDF)userDrive.getDocument(selectionNum)).getPassword());
                         System.out.println("TITLE: " + userDrive.getDocuments().get(selectionNum).getTitle());
                         System.out.println("STORAGE SIZE: " + userDrive.getDocuments().get(selectionNum).getFileSize());
-                        System.out.println("FILE EXTENSION: " + userDrive.getDocuments().get(selectionNum).getFileExtension());            
+                        System.out.println("FILE EXTENSION: " + userDrive.getDocuments().get(selectionNum).getFileExtension());  
+                        System.out.println("OWNER: " + userDrive.getDocument(selectionNum).getOwner());          
                         
                     } else{
                         //if the password was wrong, the user is booted back to the main menu and can try again 
@@ -398,11 +400,12 @@ public class Main {
                 } 
             } 
 
-            //print statements for file in the case that it was not password protected 
+            //generic file stats that are always printed 
             System.out.println("TITLE: " + userDrive.getDocuments().get(selectionNum).getTitle());
             System.out.println("STORAGE SIZE: " + userDrive.getDocuments().get(selectionNum).getFileSize());
             System.out.println("FILE EXTENSION: " + userDrive.getDocuments().get(selectionNum).getFileExtension());
             System.out.println("WORD COUNT: " + userDrive.getDocument(selectionNum).getWordCount());
+            System.out.println("OWNER: " + userDrive.getDocument(selectionNum).getOwner());          
 
 
             //data to only be shown if the queried file is a docx object 
