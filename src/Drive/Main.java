@@ -200,7 +200,7 @@ public class Main {
                                 System.out.println("PDF will be freely modifiable.");
                             } else {
                                 System.out.println("Please enter a valid y/n");
-                                continue;
+                                //TODO: make this a while loop to keep asking for valid yes no prompt before continuing, right now results in crash
                             }
                             System.out.println("what is the title of this item? ");
                             String strTitle = keyboard.readLine();
