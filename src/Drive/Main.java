@@ -64,7 +64,7 @@ public class Main {
                 int intWordCount = 0;
 
                 boolean t = false;
-                while( t== false) {
+                while( t == false) {
                     try { intWordCount = Integer.parseInt(keyboard.readLine());
                         t = true;
                     } catch (NumberFormatException e) {
@@ -129,12 +129,35 @@ public class Main {
                     itemsToAdd.add(ppt);
                 } else {
                     if(input.equals("spreadsheet")) {
+
                         System.out.print("Spreadsheet file added. How many words does this file contain? ");
-                        int intWordCount = Integer.parseInt(keyboard.readLine());
+                        int intWordCount = 0;
+                        Boolean swc = false;
+                        while(swc == false ) {
+                            try {intWordCount = Integer.parseInt(keyboard.readLine());
+                                swc = true;
+                            } catch (NumberFormatException e ) {
+                                System.out.print("Please enter a valid integer.");
+                            }
+                        }
+                        
+                        
                         System.out.println("How many rows does this spreadsheet have? ");
-                        int intRowCount = Integer.parseInt(keyboard.readLine());
+                        int intRowCount = 0;
+                        Boolean rc = false;
+                        while(rc == false) {
+                            try{
+                                Integer.parseInt(keyboard.readLine());
+                                rc = true;
+                            } catch (NumberFormatException e) {
+                                rc = false;
+                                System.out.print("Please enter a valid integer. ");
+                            }
+                        }
+
                         System.out.println("How many columns does this spreadsheet file have? ");
                         int intColumnCount = Integer.parseInt(keyboard.readLine());
+
                         System.out.println("what is the title of this item? ");
                         String strTitle = keyboard.readLine();
 
