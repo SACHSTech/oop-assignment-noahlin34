@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 import javax.print.Doc;
 
+import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.BooleanString;
+
 import Drive.*;
 
 /**
@@ -189,19 +191,26 @@ public class Main {
                                 }
                             }
                             System.out.println("Is this PDF file protected? (y/n) ");
-                            String boolInput = keyboard.readLine();
                             boolean boolIsProtected = false;
                             String strPassword = "";
-                            if(boolInput.equals("y")) {
-                                boolIsProtected = true;
-                                System.out.println("Please enter the password you wish to use to protect this PDF. ");
-                                strPassword = keyboard.readLine();
-                            } else if(boolInput.equals("n")) {
-                                System.out.println("PDF will be freely modifiable.");
-                            } else {
-                                System.out.println("Please enter a valid y/n");
-                                //TODO: make this a while loop to keep asking for valid yes no prompt before continuing, right now results in crash
-                            }
+                            boolean pdfRepeat = true;
+                            while (pdfRepeat == true) {
+                                String boolInput = keyboard.readLine();
+
+                                if(boolInput.equals("y")) {
+                                    boolIsProtected = true;
+                                    pdfRepeat = false;
+                                    System.out.println("Please enter the password you wish to use to protect this PDF. ");
+                                    strPassword = keyboard.readLine();
+                                } else if(boolInput.equals("n")) {
+                                    System.out.println("PDF will be freely modifiable.");
+                                    pdfRepeat = false;
+                                } else {
+                                    pdfRepeat = true;
+                                    System.out.println("Please enter a valid y/n");
+                                }
+                            } 
+                            
                             System.out.println("what is the title of this item? ");
                             String strTitle = keyboard.readLine();
 
