@@ -35,7 +35,7 @@ public class Main {
             System.out.print("How many files does your drive contain? ");
             try {
                 intFileCount = Integer.parseInt(keyboard.readLine());
-                if(intFileCount == 0) {
+                if(intFileCount <= 0) {
                     System.out.println("Please enter an integer  greater than 0");
                 }
     
@@ -53,7 +53,7 @@ public class Main {
 
         ArrayList<Document> itemsToAdd = new ArrayList<Document>();
 
-        for(int x = intFileCount; x > 0; x--) {
+       for(int x = intFileCount; x > 0; x--) {
             System.out.print("Please enter the type of item you would like to add ");
             String input = keyboard.readLine();
             if(input.equals("doc")) {
@@ -70,7 +70,6 @@ public class Main {
                 Docx docx = new Docx(intWordCount, intWordCount * 1.01, strAccountName, ".docx", intParagraphCount, strJustification, strTitle);
                 itemsToAdd.add(docx);
             } else {
-
                 if(input.equals("powerpoint")) {
                     System.out.print("Powerpoint file added. How many words does this file contain? ");
                     int intWordCount = Integer.parseInt(keyboard.readLine());
@@ -85,7 +84,7 @@ public class Main {
                     itemsToAdd.add(ppt);
                 } else {
                     if(input.equals("spreadsheet")) {
-                        System.out.print("Spreadsheet file added. How many words does this file contain? ");
+                        System.out.print("Spreadsheet file added. How many words does this file contain? (PDF, doc, spreadsheet, powerpoint");
                         int intWordCount = Integer.parseInt(keyboard.readLine());
                         System.out.println("How many rows does this spreadsheet have? ");
                         int intRowCount = Integer.parseInt(keyboard.readLine());
@@ -119,13 +118,16 @@ public class Main {
                             itemsToAdd.add(pdf);
 
                         } else {
-                            System.out.println("invalid input.");
+                            System.out.println("invalid input, returning");
+                            x++;
                             continue;
                         }
                     }
                 }       
             }
         }
+
+
 
         System.out.println("thank you for inputting the required data. Please wait while the system calculates your drive report.");
 
