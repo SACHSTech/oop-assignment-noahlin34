@@ -59,12 +59,14 @@ public class Document {
     }
     /**
      * Getter method for dblFileSize using calculation
-     * @return size of the file in gb 
+     * @return size of the file in kb, rounded  
      */
     public double getFileSize() {
         //derives file size based on word count 
         dblFileSize = 1.1 * intWordCount;
-        return dblFileSize;
+        
+        
+        return ((double) Math.round(dblFileSize * 100) / 100);
     }
 
 
