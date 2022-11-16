@@ -26,9 +26,8 @@ public class Document {
      * @param fileExtension
      * @param strTitle
      */
-    public Document(int wordCount, double fileSize, String owner, String fileExtension, String strTitle) {
+    public Document(int wordCount, String owner, String fileExtension, String strTitle) {
         this.intWordCount = wordCount;
-        this.dblFileSize = fileSize;
         this.strOwner = owner;
         this.strTitle = strTitle;
         this.strFileExtension = fileExtension;

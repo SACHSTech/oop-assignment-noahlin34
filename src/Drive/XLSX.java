@@ -9,15 +9,14 @@ public class XLSX extends Document {
     /**
      * Constructor method for xlsx 
      * @param wordCount number of words, inherited from document
-     * @param fileSize size of the file, inherited from document 
      * @param owner owner of the file, inherited from document
      * @param fileExtension file extension, inherited from document
      * @param intRowCount number of rows
      * @param intColumnCount number of columns
      * @param strTitle title of the file, inherited from document
      */
-    public XLSX(int wordCount, double fileSize, String owner, String fileExtension, int intRowCount, int intColumnCount, String strTitle) {
-        super(wordCount, fileSize, owner, fileExtension, strTitle);
+    public XLSX(int wordCount, String owner, String fileExtension, int intRowCount, int intColumnCount, String strTitle) {
+        super(wordCount, owner, fileExtension, strTitle);
         this.intColumnCount = intColumnCount;
         this.intRowCount = intRowCount;
 

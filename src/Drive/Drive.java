@@ -38,13 +38,7 @@ public class Drive {
     }
 
 
-    /**
-     * method that adds a new object to the documents arraylist
-     * @param newDocument document to be added
-     */
-    public void addDocument(Document newDocument) {
-        arrDocuments.add(newDocument);
-    }
+
 
     /**
      * getter method for the file count 

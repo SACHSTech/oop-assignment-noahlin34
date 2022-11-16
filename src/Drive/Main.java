@@ -120,7 +120,7 @@ public class Main {
                 String strTitle = keyboard.readLine();
 
                 //creating the docx object using the parameters specified by the user 
-                Docx docx = new Docx(intWordCount, intWordCount * 1.01, strAccountName, ".docx", intParagraphCount, strJustification, strTitle);
+                Docx docx = new Docx(intWordCount, strAccountName, ".docx", intParagraphCount, strJustification, strTitle);
 
                 //adds the created docx item to the arraylist of items to add to the drive objecgt 
                 itemsToAdd.add(docx);
@@ -169,7 +169,7 @@ public class Main {
                     String strTitle = keyboard.readLine();
     
                     //creating the ppt object using the parameters provided by the user 
-                    PPT ppt = new PPT(intWordCount, intWordCount * 1.01, strAccountName, ".ppt", intSlideCount, strTheme, strTitle);
+                    PPT ppt = new PPT(intWordCount, strAccountName, ".ppt", intSlideCount, strTheme, strTitle);
 
                     //adding the newly created ppt object to the arraylist of items to add to the drive object
                     itemsToAdd.add(ppt);
@@ -228,7 +228,7 @@ public class Main {
                         String strTitle = keyboard.readLine();
 
                         //creating xlsx object using given parameters
-                        XLSX xlsx = new XLSX(intWordCount, intWordCount * 1.01, strAccountEmail, ".xlsx", intRowCount, intColumnCount, strTitle);
+                        XLSX xlsx = new XLSX(intWordCount, strAccountEmail, ".xlsx", intRowCount, intColumnCount, strTitle);
 
                         //adding the object to the arraylist of items that need to be added 
                         itemsToAdd.add(xlsx);
@@ -293,7 +293,7 @@ public class Main {
                             String strTitle = keyboard.readLine();
 
                             //creating pdf object using given parameters
-                            PDF pdf = new PDF(intWordCount, intWordCount * 1.01, strAccountEmail, ".pdf", boolIsProtected, strPassword, strTitle);
+                            PDF pdf = new PDF(intWordCount, strAccountEmail, ".pdf", boolIsProtected, strPassword, strTitle);
 
                             //adding the new object to the arraylist 
                             itemsToAdd.add(pdf);

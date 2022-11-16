@@ -24,15 +24,14 @@ public class PDF extends Document {
     /**
      * Constructor method
      * @param wordCount - number of words, inherited from document 
-     * @param fileSize - size of file, inherited from document
      * @param owner - owner of the file, inherited from document
      * @param fileExtension - file extension, inherited from document 
      * @param boolIsProtected - boolean value for determining if the pdf is protected or not 
      * @param strPassword - string containing the given password 
      * @param strTitle - title, inherired from document 
      */
-    public PDF(int wordCount, double fileSize, String owner, String fileExtension, boolean boolIsProtected, String strPassword, String strTitle) {
-        super(wordCount, fileSize, owner, fileExtension, strTitle);
+    public PDF(int wordCount, String owner, String fileExtension, boolean boolIsProtected, String strPassword, String strTitle) {
+        super(wordCount, owner, fileExtension, strTitle);
         this.boolIsProtected = boolIsProtected;
         this.strPassword = strPassword;
         this.boolPassCheck = false;
