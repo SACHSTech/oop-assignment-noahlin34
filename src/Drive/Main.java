@@ -176,7 +176,18 @@ public class Main {
                     } else {
                         if(input.equals("pdf")) {
                             System.out.print("PDF file added. How many words does this file contain? ");
-                            int intWordCount = Integer.parseInt(keyboard.readLine());
+                            int intWordCount = 0;
+
+                            Boolean t = false;
+                            
+                            while(t == false) {
+                                try{intWordCount = Integer.parseInt(keyboard.readLine());
+                                    t = true;
+                                } catch (NumberFormatException e) {
+                                    System.out.println("Please enter a valid integer. ");
+                                    t = false;
+                                }
+                            }
                             System.out.println("Is this PDF file protected? (y/n) ");
                             String boolInput = keyboard.readLine();
                             boolean boolIsProtected = false;
@@ -185,8 +196,11 @@ public class Main {
                                 boolIsProtected = true;
                                 System.out.println("Please enter the password you wish to use to protect this PDF. ");
                                 strPassword = keyboard.readLine();
-                            } else {
+                            } else if(boolInput.equals("n")) {
                                 System.out.println("PDF will be freely modifiable.");
+                            } else {
+                                System.out.println("Please enter a valid y/n");
+                                continue;
                             }
                             System.out.println("what is the title of this item? ");
                             String strTitle = keyboard.readLine();
