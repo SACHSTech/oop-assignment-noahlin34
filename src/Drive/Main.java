@@ -54,11 +54,13 @@ public class Main {
         ArrayList<Document> itemsToAdd = new ArrayList<Document>();
 
        for(int x = intFileCount; x > 0; x--) {
-            System.out.print("Please enter the type of item you would like to add ");
+            System.out.print("Please enter the type of item you would like to add (doc, pdf, powerpoint, spreadsheet) ");
             String input = keyboard.readLine();
             if(input.equals("doc")) {
                 System.out.print("DOCX File added. How many words does this file contain? ");
+
                 int intWordCount = 0;
+
                 boolean t = false;
                 while( t== false) {
                     try { intWordCount = Integer.parseInt(keyboard.readLine());
@@ -66,13 +68,21 @@ public class Main {
                     } catch (NumberFormatException e) {
                         System.out.print("Please enter a valid integer. ");
                         t = false;
-                         
                     }
                 }
-                
 
                 System.out.print("how many paragraphs does this item have? ");
-                int intParagraphCount = Integer.parseInt(keyboard.readLine());
+
+                boolean p = false;
+                int intParagraphCount = 0;
+                while(p == false) {
+                    try {intParagraphCount = Integer.parseInt(keyboard.readLine());
+                        p = true;
+                    } catch (NumberFormatException e) {
+                        System.out.print("Please enter a valid integer. ");
+                        p = false;
+                    }
+                }
                 System.out.print("What type of justification does this file use (left, right, center) ");
                 String strJustification = keyboard.readLine();
 
@@ -96,7 +106,7 @@ public class Main {
                     itemsToAdd.add(ppt);
                 } else {
                     if(input.equals("spreadsheet")) {
-                        System.out.print("Spreadsheet file added. How many words does this file contain? (PDF, doc, spreadsheet, powerpoint");
+                        System.out.print("Spreadsheet file added. How many words does this file contain? ");
                         int intWordCount = Integer.parseInt(keyboard.readLine());
                         System.out.println("How many rows does this spreadsheet have? ");
                         int intRowCount = Integer.parseInt(keyboard.readLine());
@@ -200,6 +210,7 @@ public class Main {
             System.out.println("TITLE: " + userDrive.getDocuments().get(selectionNum).getTitle());
             System.out.println("STORAGE SIZE: " + userDrive.getDocuments().get(selectionNum).getFileSize());
             System.out.println("FILE EXTENSION: " + userDrive.getDocuments().get(selectionNum).getFileExtension());
+            System.out.println("WORD COUNT: " + userDrive.getDocument(selectionNum).getWordCount());
 
             if(userDrive.getDocument(selectionNum) instanceof Docx) {
                 System.out.println("PARAGRAPH COUNT: " + ((Docx)userDrive.getDocument(selectionNum)).getParagraphCount());
