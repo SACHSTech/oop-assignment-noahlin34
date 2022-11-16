@@ -316,12 +316,12 @@ public class Main {
         System.out.println("");
 
         //this is where the drive object is actually created and passed the array of items and other parameters
-        Drive userDrive = new Drive(intFileCount, intFileCount * 2, strAccountName, strAccountEmail, itemsToAdd);
+        Drive userDrive = new Drive(intFileCount, strAccountName, strAccountEmail, itemsToAdd);
 
         //print statments for the statistics report 
         System.out.println(userDrive.getAccountName() + "'s drive stats: ");
         System.out.println("File count: " + userDrive.getFileCount());
-        System.out.println("Total storage size: " + userDrive.getStorageSize());
+        System.out.println("Total storage size: " + userDrive.getStorageSize() + "kb");
         
        
         //initializing the input value variable 
@@ -389,7 +389,7 @@ public class Main {
                         //printing file info "decrypting"
                         System.out.println("CORRECT, the password is: " + ((PDF)userDrive.getDocument(selectionNum)).getPassword());
                         System.out.println("TITLE: " + userDrive.getDocuments().get(selectionNum).getTitle());
-                        System.out.println("STORAGE SIZE: " + userDrive.getDocuments().get(selectionNum).getFileSize());
+                        System.out.println("STORAGE SIZE: " + userDrive.getDocuments().get(selectionNum).getFileSize() + " kb");
                         System.out.println("FILE EXTENSION: " + userDrive.getDocuments().get(selectionNum).getFileExtension());  
                         System.out.println("OWNER: " + userDrive.getDocument(selectionNum).getOwner());          
                         
@@ -402,7 +402,7 @@ public class Main {
 
             //generic file stats that are always printed 
             System.out.println("TITLE: " + userDrive.getDocuments().get(selectionNum).getTitle());
-            System.out.println("STORAGE SIZE: " + userDrive.getDocuments().get(selectionNum).getFileSize());
+            System.out.println("STORAGE SIZE: " + userDrive.getDocuments().get(selectionNum).getFileSize() + " kb");
             System.out.println("FILE EXTENSION: " + userDrive.getDocuments().get(selectionNum).getFileExtension());
             System.out.println("WORD COUNT: " + userDrive.getDocument(selectionNum).getWordCount());
             System.out.println("OWNER: " + userDrive.getDocument(selectionNum).getOwner());          

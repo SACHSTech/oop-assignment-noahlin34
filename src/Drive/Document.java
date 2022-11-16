@@ -58,10 +58,11 @@ public class Document {
         return strTitle;
     }
     /**
-     * Getter method for dblFileSize
+     * Getter method for dblFileSize using calculation
      * @return size of the file in gb 
      */
     public double getFileSize() {
+        //derives file size based on word count 
         dblFileSize = 1.1 * intWordCount;
         return dblFileSize;
     }

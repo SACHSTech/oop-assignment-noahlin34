@@ -26,18 +26,15 @@ public class Drive {
      * @param strAccountEmail email of the account the drive belongs to 
      * @param arrDocuments array containing all of the document objects the drive contains
      */
-    public Drive(int intFileCount, double dblStorageSize, String strAccountName, String strAccountEmail, ArrayList<Document> arrDocuments) {
+    public Drive(int intFileCount, String strAccountName, String strAccountEmail, ArrayList<Document> arrDocuments) {
 
         this.intFileCount = intFileCount;
-        this.dblStorageSize = dblStorageSize;
         this.strAccountEmail = strAccountEmail;
         this.strAccountName = strAccountName;
         this.arrDocuments = arrDocuments;
         this.arrDocuments.addAll(arrDocuments);
 
     }
-
-
 
 
     /**
@@ -49,11 +46,18 @@ public class Drive {
     }
 
     /**
-     * getter method for the total storage size of the drive 
+     * getter method that computes and returns total storage size of the drive 
      * @return total storage size of the drive 
      */
     public double getStorageSize() {
-        return dblStorageSize;
+        double totalStorage = 0;
+
+        //adds up the storage space taken up by each file contained in the drive. 
+        for(int x = 0; x < intFileCount; x++) {
+            totalStorage = totalStorage + getDocument(x).getFileSize();
+        }
+
+        return totalStorage;
     }
 
     /**
