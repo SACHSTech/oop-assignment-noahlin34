@@ -136,25 +136,36 @@ public class Main {
         System.out.println(userDrive.getAccountName() + "'s drive stats: ");
         System.out.println("File count: " + userDrive.getFileCount());
         System.out.println("Total storage size: " + userDrive.getStorageSize());
+        
+       
+
+        String selectionInput = " ";
+        
+       OUTER: while(selectionInput.equals("") == false) {
         System.out.println("Choose an item to view info (0...." + (userDrive.getFileCount()-1) + ")");
         System.out.println("Current items in drive: ");
-
         for(int x = 0; x < userDrive.getFileCount(); x++) {
             System.out.println(userDrive.getDocuments().get(x).getTitle() + " - " + x);
         }
+        selectionInput = keyboard.readLine();
+            int selectionNum = 0;
+            try { selectionNum = Integer.parseInt(selectionInput);
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid selection.");
+                break;
+            }
 
-        String selectionInput = keyboard.readLine();
-        
-        while(selectionInput.equals("") == false) {
 
-            
+            if(selectionNum < 0 || selectionNum > intFileCount-1 ) {
+                System.out.println("Please enter a valid selection.");
+                continue;
+            }
             System.out.print("Selection: ");
             
             System.out.println("ITEM " + selectionInput);
             System.out.println("STATS: ");
             System.out.println("================");
 
-            int selectionNum = Integer.parseInt(selectionInput);
 
             if(userDrive.getDocument(selectionNum) instanceof PDF) {
                 if(((PDF)userDrive.getDocument(selectionNum)).isProtected()) {
@@ -209,7 +220,6 @@ public class Main {
             for(int x = 0; x < userDrive.getFileCount(); x++) {
                 System.out.println(userDrive.getDocuments().get(x).getTitle() + " - " + x);
             }
-
 
             selectionInput = keyboard.readLine();
 
