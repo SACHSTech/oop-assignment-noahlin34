@@ -58,7 +58,19 @@ public class Main {
             String input = keyboard.readLine();
             if(input.equals("doc")) {
                 System.out.print("DOCX File added. How many words does this file contain? ");
-                int intWordCount = Integer.parseInt(keyboard.readLine());
+                int intWordCount = 0;
+                boolean t = false;
+                while( t== false) {
+                    try { intWordCount = Integer.parseInt(keyboard.readLine());
+                        t = true;
+                    } catch (NumberFormatException e) {
+                        System.out.print("Please enter a valid integer. ");
+                        t = false;
+                         
+                    }
+                }
+                
+
                 System.out.print("how many paragraphs does this item have? ");
                 int intParagraphCount = Integer.parseInt(keyboard.readLine());
                 System.out.print("What type of justification does this file use (left, right, center) ");
@@ -152,7 +164,7 @@ public class Main {
             try { selectionNum = Integer.parseInt(selectionInput);
             } catch (NumberFormatException e) {
                 System.out.println("Please enter a valid selection.");
-                break;
+                continue;
             }
 
 
