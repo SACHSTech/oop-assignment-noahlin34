@@ -147,7 +147,7 @@ public class Main {
                         Boolean rc = false;
                         while(rc == false) {
                             try{
-                                Integer.parseInt(keyboard.readLine());
+                                intRowCount = Integer.parseInt(keyboard.readLine());
                                 rc = true;
                             } catch (NumberFormatException e) {
                                 rc = false;
@@ -156,7 +156,16 @@ public class Main {
                         }
 
                         System.out.println("How many columns does this spreadsheet file have? ");
-                        int intColumnCount = Integer.parseInt(keyboard.readLine());
+                        int intColumnCount = 0;
+                        Boolean cc = false;
+                        while (cc == false) {
+                            try{intColumnCount = Integer.parseInt(keyboard.readLine());
+                                cc = true;
+                            } catch ( NumberFormatException e) {
+                                cc = false;
+                                System.out.println("Please enter a valid integer.");
+                            }
+                        }
 
                         System.out.println("what is the title of this item? ");
                         String strTitle = keyboard.readLine();

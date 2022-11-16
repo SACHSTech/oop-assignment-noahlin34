@@ -24,11 +24,11 @@ public class Document {
      * @param fileExtension: the file extension, .docx, .ppt, etc. 
      */
     public Document(int wordCount, double fileSize, String owner, String fileExtension, String strTitle) {
-        intWordCount = wordCount;
-        dblFileSize = fileSize;
+        this.intWordCount = wordCount;
+        this.dblFileSize = fileSize;
         this.strOwner = owner;
         this.strTitle = strTitle;
-        fileExtension = strFileExtension;
+        this.strFileExtension = fileExtension;
     }
 
 
