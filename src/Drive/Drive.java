@@ -53,14 +53,14 @@ public class Drive {
      * @return total storage size of the drive 
      */
     public double getStorageSize() {
-        double totalStorage = 0;
+        double dblStorageSize = 0;
 
         //adds up the storage space taken up by each file contained in the drive. 
         for(int x = 0; x < intFileCount; x++) {
-            totalStorage = totalStorage + getDocument(x).getFileSize();
+            dblStorageSize = dblStorageSize + getDocument(x).getFileSize();
         }
 
-        return totalStorage;
+        return dblStorageSize;
     }
 
     /**
