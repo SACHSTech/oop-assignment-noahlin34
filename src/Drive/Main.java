@@ -45,11 +45,11 @@ public class Main {
 
                 //handling if the number inputted is an integer but is less than 0
                 if(intFileCount <= 0) {
-                    System.out.println("Please enter an integer  greater than 0");
+                    System.out.print("Please enter an integer  greater than 0 ");
                 }
             } catch (NumberFormatException exception) {
 
-                System.out.println("Please enter an integer  greater than 0");
+                System.out.print("Please enter an integer  greater than 0 ");
             }
         }
         
@@ -149,7 +149,7 @@ public class Main {
                             sc = true;
                         }catch (NumberFormatException e) {
                             sc = false;
-                            System.out.println("Please enter a valid integer. ");
+                            System.out.print("Please enter a valid integer. ");
                         }
                     }
 
@@ -158,7 +158,7 @@ public class Main {
                     String strTheme = keyboard.readLine();
 
                     //getting the title
-                    System.out.println("what is the title of this item? ");
+                    System.out.print("what is the title of this item? ");
                     String strTitle = keyboard.readLine();
     
                     //creating the ppt object using the parameters provided by the user 
@@ -186,7 +186,7 @@ public class Main {
                         }
                         
                         //getting row count 
-                        System.out.println("How many rows does this spreadsheet have? ");
+                        System.out.print("How many rows does this spreadsheet have? ");
 
                         //while loop that repeats until valid input is detected, exception handling w/ try catch 
                         int intRowCount = 0;
@@ -202,7 +202,7 @@ public class Main {
                         }
 
                         //getting column count 
-                        System.out.println("How many columns does this spreadsheet file have? ");
+                        System.out.print("How many columns does this spreadsheet file have? ");
 
                         //while loop that repeats until valid input is detected, exception handling w/ try catch 
                         int intColumnCount = 0;
@@ -212,12 +212,12 @@ public class Main {
                                 cc = true;
                             } catch ( NumberFormatException e) {
                                 cc = false;
-                                System.out.println("Please enter a valid integer.");
+                                System.out.print("Please enter a valid integer. ");
                             }
                         }
 
                         //getting title
-                        System.out.println("what is the title of this item? ");
+                        System.out.print("what is the title of this item? ");
                         String strTitle = keyboard.readLine();
 
                         //creating xlsx object using given parameters
@@ -241,13 +241,13 @@ public class Main {
                                 try{intWordCount = Integer.parseInt(keyboard.readLine());
                                     t = true;
                                 } catch (NumberFormatException e) {
-                                    System.out.println("Please enter a valid integer. ");
+                                    System.out.print("Please enter a valid integer. ");
                                     t = false;
                                 }
                             }
 
                             //asks if the file is password protected (adobe encrypted PDF )
-                            System.out.println("Is this PDF file protected? (y/n) ");
+                            System.out.print("Is this PDF file protected? (y/n) ");
 
                             //variable intizlization
                             boolean boolIsProtected = false;
@@ -277,12 +277,12 @@ public class Main {
 
                                     //keep repeating
                                     pdfRepeat = true;
-                                    System.out.println("Please enter a valid y/n");
+                                    System.out.print("Please enter a valid y/n ");
                                 }
                             } 
                         
                             //asking for the title 
-                            System.out.println("what is the title of this item? ");
+                            System.out.print("what is the title of this item? ");
                             String strTitle = keyboard.readLine();
 
                             //creating pdf object using given parameters
@@ -379,12 +379,9 @@ public class Main {
                     //if password check was succesful
                     if(((PDF)userDrive.getDocument(selectionNum)).passCheck() == true) {
 
-                        //printing file info "decrypting"
+                        //printing correct password and code is allowed to return to main thread 
                         System.out.println("CORRECT, the password is: " + ((PDF)userDrive.getDocument(selectionNum)).getPassword());
-                        System.out.println("TITLE: " + userDrive.getDocuments().get(selectionNum).getTitle());
-                        System.out.println("STORAGE SIZE: " + userDrive.getDocuments().get(selectionNum).getFileSize() + " kb");
-                        System.out.println("FILE EXTENSION: " + userDrive.getDocuments().get(selectionNum).getFileExtension());  
-                        System.out.println("OWNER: " + userDrive.getDocument(selectionNum).getOwner());          
+                              
                         
                     } else{
                         //if the password was wrong, the user is booted back to the main menu and can try again 
